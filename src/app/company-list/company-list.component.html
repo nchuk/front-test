@@ -1,0 +1,14 @@
+<label for="sort">Cортировать</label>
+<select class="type-company" id="sort" (change)="sortCompany($event)" >
+  <option selected disabled>Please select an option...</option>
+  <option value="industry" >По виду деятельности</option>
+  <option value="business_name">По названию</option>
+  <option value="type">По типу</option>
+</select>
+
+<label for="find">Поиск</label>
+<input id="find" type="text" [formControl]="form" >
+
+<div *ngFor="let company of companies">
+  <app-company-item [company]="company"></app-company-item>
+</div>
